@@ -19,3 +19,43 @@ body {
     background-color: var(--mainWhite);
     font-family: Lato;
 }
+
+/* navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+.navbar-center {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.2rem;
+}
+.nav-icon {
+    font-size: 1.5rem;
+}
+.trolley-btn {
+    position: relative;
+    cursor: pointer;
+}
+.trolley-items {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--primaryColour);
+    padding: 0 5px;
+    border-radius: 20%;
+    color: var(--mainWhite);
+}
+.fa-splotch {
+    font-size: 48px;
+    color: yellowgreen;
+}
