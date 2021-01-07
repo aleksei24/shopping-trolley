@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:regular,700);
+
+:root {
+    --primaryColour: red;
+    --mainWhite: #fff;
+    --mainBlack: black;
+    --mainGray: #ececec;
+    --mainTransition: all 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--mainBlack);
+    background-color: var(--mainWhite);
+    font-family: Lato;
+}
