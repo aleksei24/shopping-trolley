@@ -67,7 +67,11 @@ body {
 }
 /* header */
 .hero {
-    min-height: calc(100vh-60px);
+    min-height: calc(100vh - 60px);
+    background-image: url(../img/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
