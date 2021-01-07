@@ -4,63 +4,63 @@
             "sys": { "id": "1" },
             "fields": {
             "title": "cristmas tree",
-            "price": 12.49,
+            "price": 9.49,
             "image": { "fields": { "file": { "url": "./img/01.jpg" } } }
             }
         },
         {
-            "sys": { "id": "1" },
+            "sys": { "id": "2" },
             "fields": {
-            "title": "cristmas tree",
-            "price": 12.49,
+            "title": "mobile phone",
+            "price": 125.37,
             "image": { "fields": { "file": { "url": "./img/02.jpg" } } }
             }
         },
         {
-            "sys": { "id": "1" },
+            "sys": { "id": "3" },
             "fields": {
-            "title": "cristmas tree",
-            "price": 12.49,
+            "title": "bike",
+            "price": 117.25,
             "image": { "fields": { "file": { "url": "./img/03.jpeg" } } }
             }
         },
         {
-            "sys": { "id": "1" },
+            "sys": { "id": "4" },
             "fields": {
-            "title": "cristmas tree",
-            "price": 12.49,
+            "title": "guitar",
+            "price": 62.11,
             "image": { "fields": { "file": { "url": "./img/04.jpg" } } }
             }
         },
         {
-            "sys": { "id": "1" },
+            "sys": { "id": "5" },
             "fields": {
-            "title": "cristmas tree",
-            "price": 12.49,
+            "title": "suit",
+            "price": 112.00,
             "image": { "fields": { "file": { "url": "./img/05.jpeg" } } }
             }
         },
         {
-            "sys": { "id": "1" },
+            "sys": { "id": "6" },
             "fields": {
-            "title": "cristmas tree",
-            "price": 12.49,
+            "title": "toy solder",
+            "price": 8.55,
             "image": { "fields": { "file": { "url": "./img/06.jpg" } } }
             }
         },
         {
-            "sys": { "id": "1" },
+            "sys": { "id": "7" },
             "fields": {
-            "title": "cristmas tree",
-            "price": 12.49,
+            "title": "slippers",
+            "price": 11.10,
             "image": { "fields": { "file": { "url": "./img/07.jpg" } } }
             }
         },
         {
-            "sys": { "id": "1" },
+            "sys": { "id": "8" },
             "fields": {
-            "title": "cristmas tree",
-            "price": 12.49,
+            "title": "bottle",
+            "price": 2.14,
             "image": { "fields": { "file": { "url": "./img/08.jpg" } } }
             }
         }
