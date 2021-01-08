@@ -21,7 +21,7 @@
             "fields": {
             "title": "bike",
             "price": 117.25,
-            "image": { "fields": { "file": { "url": "./img/03.jpeg" } } }
+            "image": { "fields": { "file": { "url": "./img/03.jpg" } } }
             }
         },
         {
@@ -37,7 +37,7 @@
             "fields": {
             "title": "suit",
             "price": 112.00,
-            "image": { "fields": { "file": { "url": "./img/05.jpeg" } } }
+            "image": { "fields": { "file": { "url": "./img/05.jpg" } } }
             }
         },
         {
