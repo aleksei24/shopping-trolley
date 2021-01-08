@@ -76,20 +76,55 @@ class UI {
                 // console.log(e);
                 e.target.innerText = 'In Trolley';
                 e.target.disabled = true;
-                let trolleyItem = Storage.getProduct(id);
+                let trolleyItem = { ...Storage.getProduct(id), amount: 1 };
                 // console.log(trolleyItem);
+                trolley = [...trolley, trolleyItem];
+                // console.log(trolley);
+                Storage.saveTrolley(trolley);
+                this.setTrolleyValues(trolley);
+                this.addTrolleyItem(trolleyItem);
             });
         });
+    }
+    setTrolleyValues(trolley) {
+        let tempTotal = 0;
+        let itemsTotal = 0;
+        trolley.map((item) => {
+            tempTotal += item.price * item.amount;
+            itemsTotal += item.amount;
+        });
+        trolleyTotal.innerText = parseFloat(tempTotal.toFixed(2));
+        trolleyItems.innerText = itemsTotal;
+    }
+    addTrolleyItem(item) {
+        const div = document.createElement('div');
+        div.classList.add('trolley-item');
+        div.innerHTML = `
+                        <img src=${item.image} alt="product" />
+                        <div>
+                            <h4>${item.title}</h4>
+                            <h5>£${item.price}</h5>
+                            <span class="remove-item" data-id=${item.id}>remove</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-chevron-up data-id=${item.id}"></i>
+                            <p class="item-amount">${item.amount}</p>
+                            <i class="fas fa-chevron-down data-id=${item.id}"></i>
+                        </div>
+                    `;
     }
 }
 // local storage
 class Storage {
     static saveProducts(products) {
-        localStorage.setItem('trolley', JSON.stringify(products));
+        localStorage.setItem('products', JSON.stringify(products));
     }
     static getProduct(id) {
-        let products = JSON.parse(localStorage.getItem('trolley'));
+        let products = JSON.parse(localStorage.getItem('products'));
         return products.find((item) => item.id === id);
+    }
+    static saveTrolley(trolley) {
+        localStorage.setItem('trolley', JSON.stringify(trolley));
     }
 }
 
