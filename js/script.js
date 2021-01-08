@@ -12,6 +12,9 @@ const productsDOM = document.querySelector('.products-center');
 // trolley
 let trolley = [];
 
+// buttons
+let buttonsDOM = [];
+
 // path to json file
 const path = 'products.json';
 
@@ -59,7 +62,23 @@ class UI {
     }
     getBagBtns() {
         const btns = [...document.querySelectorAll('.bag-btn')];
-        console.log(btns);
+        // console.log(btns);
+        btns.forEach((el) => {
+            let id = el.dataset.id;
+            // console.log(id);
+            let inTrolley = trolley.find((item) => {
+                item.id === id;
+            });
+            if (inTrolley) {
+                el.innerHTML = 'In Trolley';
+                el.disabled = true;
+            }
+            el.addEventListener('click', (e) => {
+                // console.log(e);
+                e.target.innerText = 'In Trolley';
+                e.target.disabled = true;
+            });
+        });
     }
 }
 // local storage
