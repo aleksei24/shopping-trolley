@@ -101,3 +101,46 @@ body {
     background-color: transparent;
     color: var(--primaryColour);
 }
+/* products */
+.products {
+    padding: 4rem 0;
+    text-align: center;
+}
+.section-title h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 5rem;
+    text-transform: capitalize;
+}
+.products-center {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+}
+.img-container {
+    position: relative;
+    overflow: hidden;
+}
+.bag-btn {
+    position: absolute;
+    top: 70%;
+    right: 0;
+    background-color: var(--primaryColour);
+    border: none;
+    text-transform: uppercase;
+    padding: 0.5remo 0.75rem;
+    font-weight: bold;
+    transition: var(--mainTransition);
+    transform: translateX(101%);
+    cursor: pointer;
+}
+.fa-shopping-cart {
+    margin-right: 0.5rem;
+}
+.img-container:hover .bag-btn {
+    transform: translateX(0);
+}
