@@ -83,6 +83,7 @@ class UI {
                 Storage.saveTrolley(trolley);
                 this.setTrolleyValues(trolley);
                 this.addTrolleyItem(trolleyItem);
+                this.showTrolley();
             });
         });
     }
@@ -113,6 +114,10 @@ class UI {
                         </div>
                     `;
         trolleyContent.appendChild(div);
+    }
+    showTrolley() {
+        trolleyOverlay.classList.add('transparentBg');
+        trolleyDOM.classList.add('showTrolley');
     }
 }
 // local storage
