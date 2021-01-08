@@ -21,7 +21,8 @@ class Products {
     async getProducts() {
         try {
             let result = await fetch(path);
-            return result;
+            let data = await result.json();
+            return data;
         } catch (error) {
             console.log(error);
         }
