@@ -135,7 +135,7 @@ body {
     background-color: var(--primaryColour);
     border: none;
     text-transform: uppercase;
-    padding: 0.5remo 0.75rem;
+    padding: 0.5rem 0.75rem;
     font-weight: bold;
     transition: var(--mainTransition);
     transform: translateX(101%);
