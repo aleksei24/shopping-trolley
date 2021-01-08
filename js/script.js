@@ -57,6 +57,10 @@ class UI {
         });
         productsDOM.innerHTML = result;
     }
+    getBagBtns() {
+        const btns = [...document.querySelectorAll('.bag-btn')];
+        console.log(btns);
+    }
 }
 // local storage
 class Storage {
@@ -70,8 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const products = new Products();
 
     // get all products
-    products.getProducts().then((products) => {
-        ui.displayProducts(products);
-        Storage.saveProducts(products);
-    });
+    products
+        .getProducts()
+        .then((products) => {
+            ui.displayProducts(products);
+            Storage.saveProducts(products);
+        })
+        .then(() => {
+            ui.getBagBtns();
+        });
 });
