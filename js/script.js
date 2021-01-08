@@ -63,12 +63,11 @@ class UI {
     getBagBtns() {
         const btns = [...document.querySelectorAll('.bag-btn')];
         // console.log(btns);
+        buttonsDOM = btns;
         btns.forEach((el) => {
             let id = el.dataset.id;
             // console.log(id);
-            let inTrolley = trolley.find((item) => {
-                item.id === id;
-            });
+            let inTrolley = trolley.find((item) => item.id === id);
             if (inTrolley) {
                 el.innerHTML = 'In Trolley';
                 el.disabled = true;
@@ -77,6 +76,8 @@ class UI {
                 // console.log(e);
                 e.target.innerText = 'In Trolley';
                 e.target.disabled = true;
+                let trolleyItem = Storage.getProduct(id);
+                // console.log(trolleyItem);
             });
         });
     }
@@ -85,6 +86,10 @@ class UI {
 class Storage {
     static saveProducts(products) {
         localStorage.setItem('trolley', JSON.stringify(products));
+    }
+    static getProduct(id) {
+        let products = JSON.parse(localStorage.getItem('trolley'));
+        return products.find((item) => item.id === id);
     }
 }
 
