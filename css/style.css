@@ -180,7 +180,7 @@ body {
     background-color: rgba(175, 184, 101, 0.603);
     transition: var(--mainTransition);
     z-index: 2;
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 .trolley {
     position: fixed;
@@ -193,7 +193,7 @@ body {
     z-index: 3;
     padding: 1.5rem;
     transition: var(--mainTransition);
-    /* transform: translateX(100%); */
+    transform: translateX(100%);
 }
 .trolley h2 {
     text-transform: capitalize;
@@ -222,7 +222,7 @@ body {
     align-items: center;
     grid-template-columns: auto 1fr auto;
     grid-column-gap: 1.5rem;
-    margin: 1.5ren 0;
+    margin: 1.5rem 0;
 }
 .trolley-item img {
     height: 100px;
