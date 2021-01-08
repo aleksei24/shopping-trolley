@@ -112,6 +112,7 @@ class UI {
                             <i class="fas fa-chevron-down data-id=${item.id}"></i>
                         </div>
                     `;
+        trolleyContent.appendChild(div);
     }
 }
 // local storage
