@@ -11,3 +11,15 @@ const productsDOM = document.querySelector('.products-center');
 
 // trolley
 let trolley = [];
+
+// getting the products
+class Products {}
+// display products
+class UI {}
+// local storage
+class Storage {}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const ui = new UI();
+    const products = new Products();
+});
