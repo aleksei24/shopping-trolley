@@ -2,7 +2,7 @@
 
 :root {
     --primaryColour: red;
-    --mainWhite: #fff;
+    --mainWhite: white;
     --mainBlack: black;
     --mainGray: #ececec;
     --mainTransition: all 0.3s ease;
@@ -63,7 +63,7 @@ body {
 }
 .fa-splotch {
     font-size: 48px;
-    color: yellowgreen;
+    color: var(--primaryColour);
 }
 /* header */
 .hero {
