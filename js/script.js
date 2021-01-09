@@ -1,7 +1,7 @@
 // variables
 const trolleyBtn = document.querySelector('.trolley-btn');
 const closeTrolleyBtn = document.querySelector('.close-trolley');
-const clearTrolley = document.querySelector('.clear-trolley');
+const clearTrolleyBtn = document.querySelector('.clear-trolley');
 const trolleyDOM = document.querySelector('.trolley');
 const trolleyOverlay = document.querySelector('.trolley-overlay');
 const trolleyItems = document.querySelector('.trolley-items');
@@ -108,9 +108,9 @@ class UI {
                             <span class="remove-item" data-id=${item.id}>remove</span>
                         </div>
                         <div>
-                            <i class="fas fa-chevron-up data-id=${item.id}"></i>
+                            <i class="fas fa-chevron-up" data-id=${item.id}></i>
                             <p class="item-amount">${item.amount}</p>
-                            <i class="fas fa-chevron-down data-id=${item.id}"></i>
+                            <i class="fas fa-chevron-down" data-id=${item.id}></i>
                         </div>
                     `;
         trolleyContent.appendChild(div);
@@ -132,6 +132,50 @@ class UI {
     hideTrolley() {
         trolleyOverlay.classList.remove('transparentBg');
         trolleyDOM.classList.remove('showTrolley');
+    }
+    trolleyLogic() {
+        clearTrolleyBtn.addEventListener('click', () => {
+            this.clearTrolley();
+        });
+        trolleyContent.addEventListener('click', (e) => {
+            if (e.target.classList.contains('remove-item')) {
+                let removeItem = e.target;
+                let id = removeItem.dataset.id;
+                trolleyContent.removeChild(
+                    removeItem.parentElement.parentElement
+                );
+                this.removeItem(id);
+            } else if (e.target.classList.contains('fa-chevron-up')) {
+                let addAmount = e.target;
+                let id = addAmount.dataset.id;
+                // console.log(addAmount);
+                let tempItem = trolley.find((item) => item.id === id);
+                tempItem.amount++;
+                Storage.saveTrolley(trolley);
+                this.setTrolleyValues(trolley);
+                addAmount.nextElementSibling.innerText = tempItem.amount;
+            }
+        });
+    }
+    clearTrolley() {
+        let trolleyItems = trolley.map((item) => item.id);
+        trolleyItems.forEach((id) => this.removeItem(id));
+        // console.log(trolleyContent.children);
+        while (trolleyContent.children.length > 0) {
+            trolleyContent.removeChild(trolleyContent.children[0]);
+        }
+        this.hideTrolley();
+    }
+    removeItem(id) {
+        trolley = trolley.filter((item) => item.id !== id);
+        this.setTrolleyValues(trolley);
+        Storage.saveTrolley(trolley);
+        let btn = this.getSingleBtn(id);
+        btn.disabled = false;
+        btn.innerHTML = `<i class="fas fa-shopping-cart"></i>add to trolley`;
+    }
+    getSingleBtn(id) {
+        return buttonsDOM.find((btn) => btn.dataset.id === id);
     }
 }
 // local storage
@@ -169,5 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(() => {
             ui.getBagBtns();
+            ui.trolleyLogic();
         });
 });
