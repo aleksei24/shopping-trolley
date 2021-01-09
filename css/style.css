@@ -241,6 +241,7 @@ body {
 .remove-item {
     color: gray;
     cursor: pointer;
+    text-transform: capitalize;
 }
 .fa-chevron-up,
 .fa-chevron-down {

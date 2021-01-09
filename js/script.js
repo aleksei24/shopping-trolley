@@ -119,6 +119,20 @@ class UI {
         trolleyOverlay.classList.add('transparentBg');
         trolleyDOM.classList.add('showTrolley');
     }
+    setupApp() {
+        trolley = Storage.getTrolley();
+        this.setTrolleyValues(trolley);
+        this.populateTrolley(trolley);
+        trolleyBtn.addEventListener('click', this.showTrolley);
+        closeTrolleyBtn.addEventListener('click', this.hideTrolley);
+    }
+    populateTrolley(trolley) {
+        trolley.forEach((item) => this.addTrolleyItem(item));
+    }
+    hideTrolley() {
+        trolleyOverlay.classList.remove('transparentBg');
+        trolleyDOM.classList.remove('showTrolley');
+    }
 }
 // local storage
 class Storage {
@@ -132,11 +146,19 @@ class Storage {
     static saveTrolley(trolley) {
         localStorage.setItem('trolley', JSON.stringify(trolley));
     }
+    static getTrolley() {
+        return localStorage.getItem('trolley')
+            ? JSON.parse(localStorage.getItem('trolley'))
+            : [];
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const ui = new UI();
     const products = new Products();
+
+    // setup app
+    ui.setupApp();
 
     // get all products
     products
