@@ -166,6 +166,22 @@ class UI {
                 Storage.saveTrolley(trolley);
                 this.setTrolleyValues(trolley);
                 addAmount.nextElementSibling.innerText = tempItem.amount;
+            } else if (e.target.classList.contains('fa-chevron-down')) {
+                let subtractAmount = e.target;
+                let id = subtractAmount.dataset.id;
+                let tempItem = trolley.find((item) => item.id === id);
+                tempItem.amount--;
+                if (tempItem.amount > 0) {
+                    Storage.saveTrolley(trolley);
+                    this.setTrolleyValues(trolley);
+                    subtractAmount.previousElementSibling.innerText =
+                        tempItem.amount;
+                } else {
+                    trolleyContent.removeChild(
+                        subtractAmount.parentElement.parentElement
+                    );
+                    this.removeItem(id);
+                }
             }
         });
     }
