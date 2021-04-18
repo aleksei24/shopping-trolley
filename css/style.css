@@ -184,7 +184,7 @@ body {
     background-color: rgba(175, 184, 101, 0.603);
     transition: var(--mainTransition);
     z-index: 2;
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 .trolley {
     position: fixed;
@@ -197,7 +197,7 @@ body {
     z-index: 3;
     padding: 1.5rem;
     transition: var(--mainTransition);
-    transform: translateX(100%);
+    /* transform: translateX(100%); */
 }
 .trolley h2 {
     text-transform: capitalize;
