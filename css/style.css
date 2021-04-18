@@ -124,10 +124,13 @@ body {
 }
 .product {
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
 }
 .img-container {
     position: relative;
     overflow: hidden;
+    flex: 1 1 auto;
 }
 .bag-btn {
     position: absolute;
