@@ -3,7 +3,7 @@
         {
             "sys": { "id": "1" },
             "fields": {
-            "title": "cristmas tree",
+            "title": "rosary beads",
             "price": 9.49,
             "image": { "fields": { "file": { "url": "./img/01.jpg" } } }
             }
@@ -11,7 +11,7 @@
         {
             "sys": { "id": "2" },
             "fields": {
-            "title": "mobile phone",
+            "title": "guitar",
             "price": 125.37,
             "image": { "fields": { "file": { "url": "./img/02.jpg" } } }
             }
@@ -19,7 +19,7 @@
         {
             "sys": { "id": "3" },
             "fields": {
-            "title": "bike",
+            "title": "telescope",
             "price": 117.25,
             "image": { "fields": { "file": { "url": "./img/03.jpg" } } }
             }
@@ -27,7 +27,7 @@
         {
             "sys": { "id": "4" },
             "fields": {
-            "title": "guitar",
+            "title": "helmet",
             "price": 62.11,
             "image": { "fields": { "file": { "url": "./img/04.jpg" } } }
             }
@@ -59,8 +59,8 @@
         {
             "sys": { "id": "8" },
             "fields": {
-            "title": "bottle",
-            "price": 2.14,
+            "title": "book",
+            "price": 6.14,
             "image": { "fields": { "file": { "url": "./img/08.jpg" } } }
             }
         }
