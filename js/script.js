@@ -20,7 +20,14 @@ class Products {
         try {
             let result = await fetch(path);
             let data = await result.json();
-            return data;
+            let products = data.items;
+            products = products.map((item) => {
+                const { title, price } = item.fields;
+                const { id } = item.sys.id;
+                const img = item.fields.image.fields.file.url;
+                return { title, price, id, img };
+            });
+            return products;
         } catch (err) {
             console.error(err);
         }
