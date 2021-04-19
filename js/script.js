@@ -78,7 +78,8 @@ class UI {
                 Storage.saveTrolley(trolley);
                 this.setTrolleyValues(trolley);
                 this.addTrolleyItem(trolleyItem);
-                this.showTrolley();
+                // it is annoying to see the trolley everytime a product is chosen
+                // this.showTrolley();
             });
         });
     }
