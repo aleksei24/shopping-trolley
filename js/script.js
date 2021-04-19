@@ -161,7 +161,7 @@ class UI {
         Storage.saveTrolley(trolley);
         let btn = this.getSingleButton(id);
         btn.disabled = false;
-        btn.innerHTML = `<i class="fas fa-shopping-cart"></i>add to cart`;
+        btn.innerHTML = `<i class="fas fa-shopping-cart"></i>add to trolley`;
     }
 
     getSingleButton(id) {
