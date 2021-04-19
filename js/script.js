@@ -73,6 +73,7 @@ class UI {
                 e.target.innerText = 'In Trolley';
                 e.target.disabled = true;
                 // get an item from the list of products
+                let trolleyItem = { ...Storage.getProduct(id), amount: 1 };
                 // pit the item into the trolley
                 // stash trolley in localStorage
                 // set values
@@ -90,6 +91,7 @@ class Storage {
 
     static getProduct(id) {
         let products = JSON.parse(localStorage.getItem('products'));
+        return products.find((el) => el.id === id);
     }
 }
 
