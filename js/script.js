@@ -149,10 +149,23 @@ class UI {
         trolleyItems.forEach((el) => {
             this.removeItem(el);
         });
+        while (trolleyContent.children.length > 0) {
+            trolleyContent.removeChild(trolleyContent.children[0]);
+        }
+        this.hideTrolley();
     }
 
     removeItem(id) {
         trolley = trolley.filter((item) => item.id !== id);
+        this.setTrolleyValues(trolley);
+        Storage.saveTrolley(trolley);
+        let btn = this.getSingleButton(id);
+        btn.disabled = false;
+        btn.innerHTML = `<i class="fas fa-shopping-cart"></i>add to cart`;
+    }
+
+    getSingleButton(id) {
+        return buttonsDOM.find((btn) => btn.dataset.id === id);
     }
 }
 
