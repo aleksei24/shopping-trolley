@@ -169,7 +169,9 @@ class UI {
                     decreaseAmount.previousElementSibling.innerText =
                         tempItem.amount;
                 } else {
-                    trolleyContent.removeChild(decreaseAmount.parentElement);
+                    trolleyContent.removeChild(
+                        decreaseAmount.parentElement.parentElement
+                    );
                     this.removeItem(id);
                 }
             }
