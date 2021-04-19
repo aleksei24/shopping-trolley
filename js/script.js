@@ -142,6 +142,16 @@ class UI {
         clearTrolleyBtn.addEventListener('click', () => {
             this.clearTrolley();
         });
+        trolleyContent.addEventListener('click', (e) => {
+            if (e.target.classList.contains('remove-item')) {
+                let removeItem = e.target;
+                let id = removeItem.dataset.id;
+                trolleyContent.removeChild(
+                    removeItem.parentElement.parentElement
+                );
+                this.removeItem(id);
+            }
+        });
     }
 
     clearTrolley() {
