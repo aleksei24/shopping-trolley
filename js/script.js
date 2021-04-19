@@ -75,12 +75,22 @@ class UI {
 
                 let trolleyItem = { ...Storage.getProduct(id), amount: 1 };
                 trolley = [...trolley, trolleyItem];
-                // stash trolley in localStorage
                 Storage.saveTrolley(trolley);
-                // set values
+                this.setTrolleyValues(trolley);
                 // display the item in trolley
             });
         });
+    }
+    setTrolleyValues(trolley) {
+        let tempTotal = 0;
+        let itemsTotal = 0;
+        trolley.map((item) => {
+            tempTotal += item.price * item.amount;
+            itemsTotal += item.amount;
+        });
+        trolleyTotal.innerText = parseFloat(tempTotal.toFixed(2));
+        trolleyItems.innerText = itemsTotal;
+        console.log(trolleyTotal, trolleyItems);
     }
 }
 
