@@ -1,7 +1,7 @@
 // variables
 const trolleyBtn = document.querySelector('.trolley-btn');
 const closeTrolleyBtn = document.querySelector('.close-trolley');
-const clearTrolley = document.querySelector('.clear-trolley');
+const clearTrolleyBtn = document.querySelector('.clear-trolley');
 const trolleyDOM = document.querySelector('.trolley');
 const trolleyOverlay = document.querySelector('.trolley-overlay');
 const trolleyItems = document.querySelector('.trolley-items');
@@ -137,6 +137,23 @@ class UI {
         trolleyOverlay.classList.remove('transparentBg');
         trolleyDOM.classList.remove('showTrolley');
     }
+
+    trolleyLogic() {
+        clearTrolleyBtn.addEventListener('click', () => {
+            this.clearTrolley();
+        });
+    }
+
+    clearTrolley() {
+        let trolleyItems = trolley.map((item) => item.id);
+        trolleyItems.forEach((el) => {
+            this.removeItem(el);
+        });
+    }
+
+    removeItem(id) {
+        trolley = trolley.filter((item) => item.id !== id);
+    }
 }
 
 // local storage
@@ -174,5 +191,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(() => {
             ui.getBagButtons();
+            ui.trolleyLogic();
         });
 });
