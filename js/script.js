@@ -12,6 +12,10 @@ const productsDOM = document.querySelector('.products-center');
 // trolley
 let trolley = [];
 
+// buttons
+let buttonsDOM = [];
+
+// path to json-file
 const path = 'products.json';
 
 // getting the products
@@ -57,18 +61,23 @@ class UI {
     }
     getBagButtons() {
         const buttons = [...document.querySelectorAll('.bag-btn')];
+        buttonsDOM = buttons;
         buttons.forEach((btn) => {
             let id = btn.dataset.id;
             let inTrolley = trolley.find((item) => item.id === id);
             if (inTrolley) {
                 btn.innerText = 'In Trolley';
                 btn.disabled = true;
-            } else {
-                btn.addEventListener('click', (e) => {
-                    e.target.innerText = 'In Trolley';
-                    e.target.disabled = true;
-                });
             }
+            btn.addEventListener('click', (e) => {
+                e.target.innerText = 'In Trolley';
+                e.target.disabled = true;
+                // get an item from the list of products
+                // pit the item into the trolley
+                // stash trolley in localStorage
+                // set values
+                // display the item in trolley
+            });
         });
     }
 }
@@ -77,6 +86,10 @@ class UI {
 class Storage {
     static saveProducts(products) {
         localStorage.setItem('products', JSON.stringify(products));
+    }
+
+    static getProduct(id) {
+        let products = JSON.parse(localStorage.getItem('products'));
     }
 }
 
