@@ -77,10 +77,11 @@ class UI {
                 trolley = [...trolley, trolleyItem];
                 Storage.saveTrolley(trolley);
                 this.setTrolleyValues(trolley);
-                // display the item in trolley
+                this.addTrolleyItem(trolleyItem);
             });
         });
     }
+
     setTrolleyValues(trolley) {
         let tempTotal = 0;
         let itemsTotal = 0;
@@ -90,7 +91,26 @@ class UI {
         });
         trolleyTotal.innerText = parseFloat(tempTotal.toFixed(2));
         trolleyItems.innerText = itemsTotal;
-        console.log(trolleyTotal, trolleyItems);
+    }
+
+    addTrolleyItem(item) {
+        const div = document.createElement('div');
+        div.classList.add('trolley-item');
+        div.innerHTML = `
+            <img src=${item.img} alt="" />
+            <div>
+                <h4>${item.title}</h4>
+                <h5>$${item.price}</h5>
+                <span class="remove-item" data-id=${item.id}>remove</span>
+            </div>
+            <div>
+                <i class="fas fa-chevron-up" data-id=${item.id}></i>
+                <p class="item-amount">${item.amount}</p>
+                <i class="fas fa-chevron-down" data-id=${item.id}></i>
+            </div>
+        `;
+        trolleyContent.appendChild(div);
+        console.log(trolleyContent);
     }
 }
 
