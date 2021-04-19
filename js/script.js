@@ -72,10 +72,11 @@ class UI {
             btn.addEventListener('click', (e) => {
                 e.target.innerText = 'In Trolley';
                 e.target.disabled = true;
-                // get an item from the list of products
+
                 let trolleyItem = { ...Storage.getProduct(id), amount: 1 };
-                // pit the item into the trolley
+                trolley = [...trolley, trolleyItem];
                 // stash trolley in localStorage
+                Storage.saveTrolley(trolley);
                 // set values
                 // display the item in trolley
             });
@@ -92,6 +93,10 @@ class Storage {
     static getProduct(id) {
         let products = JSON.parse(localStorage.getItem('products'));
         return products.find((el) => el.id === id);
+    }
+
+    static saveTrolley(trolley) {
+        localStorage.setItem('my-trolley', JSON.stringify(trolley));
     }
 }
 
