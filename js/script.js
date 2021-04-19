@@ -78,6 +78,7 @@ class UI {
                 Storage.saveTrolley(trolley);
                 this.setTrolleyValues(trolley);
                 this.addTrolleyItem(trolleyItem);
+                this.showTrolley();
             });
         });
     }
@@ -110,7 +111,30 @@ class UI {
             </div>
         `;
         trolleyContent.appendChild(div);
-        console.log(trolleyContent);
+    }
+
+    showTrolley() {
+        trolleyOverlay.classList.add('transparentBg');
+        trolleyDOM.classList.add('showTrolley');
+    }
+
+    setupApp() {
+        trolley = Storage.getTrolley();
+        this.setTrolleyValues(trolley);
+        this.populateTrolley(trolley);
+        trolleyBtn.addEventListener('click', this.showTrolley);
+        closeTrolleyBtn.addEventListener('click', this.hideTrolley);
+    }
+
+    populateTrolley(trolley) {
+        trolley.forEach((el) => {
+            this.addTrolleyItem(el);
+        });
+    }
+
+    hideTrolley() {
+        trolleyOverlay.classList.remove('transparentBg');
+        trolleyDOM.classList.remove('showTrolley');
     }
 }
 
@@ -128,11 +152,18 @@ class Storage {
     static saveTrolley(trolley) {
         localStorage.setItem('my-trolley', JSON.stringify(trolley));
     }
+
+    static getTrolley() {
+        return localStorage.getItem('my-trolley')
+            ? JSON.parse(localStorage.getItem('my-trolley'))
+            : [];
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const ui = new UI();
     const products = new Products();
+    ui.setupApp();
 
     products
         .getProducts()
