@@ -16,7 +16,7 @@ let trolley = [];
 let buttonsDOM = [];
 
 // path to json-file
-const path = 'products.json';
+const path = 'js/sushi.json';
 
 // getting the products
 class Products {
@@ -26,10 +26,11 @@ class Products {
             let data = await result.json();
             let products = data.items;
             products = products.map((item) => {
-                const { title, price } = item.fields;
+                const { title, text } = item.fields;
                 const { id } = item.sys;
+                const { old, current } = item.fields.price;
                 const img = item.fields.image.fields.file.url;
-                return { title, price, id, img };
+                return { title, text, id, old, current, img };
             });
             return products;
         } catch (err) {
@@ -53,7 +54,7 @@ class UI {
                     </button>
                 </div>
                 <h3>${el.title}</h3>
-                <h4>$${el.price}</h4>
+                <h4>$${el.current}</h4>
             </article>
             `;
         });
@@ -88,7 +89,7 @@ class UI {
         let tempTotal = 0;
         let itemsTotal = 0;
         trolley.map((item) => {
-            tempTotal += item.price * item.amount;
+            tempTotal += item.current * item.amount;
             itemsTotal += item.amount;
         });
         trolleyTotal.innerText = parseFloat(tempTotal.toFixed(2));
@@ -102,7 +103,7 @@ class UI {
             <img src=${item.img} alt="" />
             <div>
                 <h4>${item.title}</h4>
-                <h5>$${item.price}</h5>
+                <h5>$${item.current}</h5>
                 <span class="remove-item" data-id=${item.id}>remove</span>
             </div>
             <div>
@@ -146,9 +147,7 @@ class UI {
             if (e.target.classList.contains('remove-item')) {
                 let removeItem = e.target;
                 let id = removeItem.dataset.id;
-                trolleyContent.removeChild(
-                    removeItem.parentElement.parentElement
-                );
+                trolleyContent.removeChild(removeItem.parentElement.parentElement);
                 this.removeItem(id);
             } else if (e.target.classList.contains('fa-chevron-up')) {
                 let increaseAmount = e.target;
@@ -166,12 +165,9 @@ class UI {
                 if (tempItem.amount > 0) {
                     Storage.saveTrolley(trolley);
                     this.setTrolleyValues(trolley);
-                    decreaseAmount.previousElementSibling.innerText =
-                        tempItem.amount;
+                    decreaseAmount.previousElementSibling.innerText = tempItem.amount;
                 } else {
-                    trolleyContent.removeChild(
-                        decreaseAmount.parentElement.parentElement
-                    );
+                    trolleyContent.removeChild(decreaseAmount.parentElement.parentElement);
                     this.removeItem(id);
                 }
             }
