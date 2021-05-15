@@ -1,0 +1,76 @@
+{
+    "items":[
+        {
+            "sys": { "id": "1" },
+            "fields": {
+            "title": "Окинава",
+            "text": "Сыр творожный, креветка в кляре, огурец, тобико",
+            "price": {"old": 250, "current": 180},
+            "image": { "fields": { "file": { "url": "./img/sushi/01.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "2" },
+            "fields": {
+            "title": "Японский Бог",
+            "text": "Сыр творожный, креветка в кляре, огурец, тобико",
+            "price": {"old": 300, "current": 240},
+            "image": { "fields": { "file": { "url": "./img/sushi/02.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "3" },
+            "fields": {
+            "title": "Ниндзя",
+            "text": "Сыр творожный, креветка в кляре, огурец, тобико",
+            "price": {"old": 270, "current": 210},
+            "image": { "fields": { "file": { "url": "./img/sushi/03.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "4" },
+            "fields": {
+            "title": "Киото",
+            "text": "Сыр творожный, креветка в кляре, огурец, тобико",
+            "price": {"old": 180, "current": 120},
+            "image": { "fields": { "file": { "url": "./img/sushi/04.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "5" },
+            "fields": {
+            "title": "Фудзияма",
+            "text": "Сыр творожный, креветка в кляре, огурец, тобико",
+            "price": {"old": 350, "current": 280},
+            "image": { "fields": { "file": { "url": "./img/sushi/05.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "6" },
+            "fields": {
+            "title": "Токанава",
+            "text": "Сыр творожный, креветка в кляре, огурец, тобико",
+            "price": {"old": 150, "current": 110},
+            "image": { "fields": { "file": { "url": "./img/sushi/06.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "7" },
+            "fields": {
+            "title": "Японский Городовой",
+            "text": "Сыр творожный, креветка в кляре, огурец, тобико",
+            "price": {"old": 230, "current": 170},
+            "image": { "fields": { "file": { "url": "./img/sushi/07.jpg" } } }
+            }
+        },
+        {
+            "sys": { "id": "8" },
+            "fields": {
+            "title": "Банзай",
+            "text": "Сыр творожный, креветка в кляре, огурец, тобико",
+            "price": {"old": 310, "current": 280},
+            "image": { "fields": { "file": { "url": "./img/sushi/08.jpg" } } }
+            }
+        }
+    ]
+}
