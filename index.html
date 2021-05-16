@@ -3,37 +3,112 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Shop Template</title>
+        <title>Sushi Fix</title>
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
             integrity="sha512-rqQltXRuHxtPWhktpAZxLHUVJ3Eombn3hvk9PHjV/N5DMUYnzKPC1i3ub0mEXgFzsaZNeJcoE0YHq0j/GFsdGg=="
             crossorigin="anonymous"
         />
+        <!-- <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon" /> -->
         <link rel="stylesheet" href="./css/style.css" />
     </head>
     <body>
         <div class="wrapper">
-            <nav class="navbar">
-                <div class="navbar-center">
-                    <div class="nav-icon">
-                        <i class="fas fa-bars"></i>
+            <header class="header">
+                <div class="header__container container">
+                    <div class="header__top">
+                        <div class="header__column">
+                            <a href="./index.html" class="header__logo logo">
+                                logo
+                                <img src="./img/logo/logo-w.webp" alt="" />
+                            </a>
+                            <div class="header__delivery">
+                                <p>
+                                    Доставка по
+                                    <span>городу</span>
+                                    60 минут.
+                                </p>
+                            </div>
+                            <div class="header__delivery_mobile">
+                                <img src="./img/header/location.webp" alt="location" />
+                                <span>Уездный город N</span>
+                            </div>
+                        </div>
+                        <div class="header__column">
+                            <ul class="header__info info-header">
+                                <li class="info-header__item">
+                                    <a href="#!" class="info-header__link">
+                                        <img src="./img/header/place.webp" alt="place" />
+                                        <span>ул. Баррикадная, 16</span>
+                                    </a>
+                                </li>
+                                <li class="info-header__item">
+                                    <a href="#!" class="info-header__link">
+                                        <img src="./img/header/phone.webp" alt="phone" />
+                                        <span>8 (8422)21-73-73</span>
+                                    </a>
+                                </li>
+                                <li class="info-header__item">
+                                    <a href="#!" class="info-header__link">
+                                        <img src="./img/header/login.webp" alt="login" />
+                                        <span>Войти</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <i class="fas fa-splotch"></i>
-                    <div class="trolley-btn">
-                        <span class="nav-icon">
-                            <i class="fas fa-shopping-cart"></i>
-                        </span>
-                        <div class="trolley-items">0</div>
-                    </div>
+                    <nav class="navbar">
+                        <div class="navbar-center">
+                            <ul class="nav__list">
+                                <li class="nav__item">
+                                    <a href="#!" class="nav__link">РОЛЛЫ</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#!" class="nav__link">СЕТЫ</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#!" class="nav__link">СУШИ</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#!" class="nav__link">ВОКИ</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#!" class="nav__link">ТЯХАН</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#!" class="nav__link">СУПЫ</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#!" class="nav__link">САЛАТЫ</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#!" class="nav__link">ДОПОЛНИТЕЛЬНО</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#!" class="nav__link">АКЦИИ</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#!" class="nav__link">КОНТАКТЫ</a>
+                                </li>
+                            </ul>
+                            <div class="trolley-btn">
+                                <span class="nav-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>
+                                <div class="trolley-items">0</div>
+                            </div>
+                        </div>
+                    </nav>
                 </div>
-            </nav>
-            <header class="hero">
+            </header>
+
+            <section class="hero">
                 <div class="banner">
                     <h1 class="banner-title">find out what we're selling</h1>
                     <button class="banner-btn">Shop now</button>
                 </div>
-            </header>
+            </section>
             <section class="products">
                 <div class="section-title">
                     <h2>what we're selling</h2>

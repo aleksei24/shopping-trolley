@@ -10,9 +10,16 @@
     --btnBg: #fecb24;
 }
 
-* {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
+    position: relative;
     padding: 0;
+    border: 0;
+    margin: 0;
+    list-style-type: none;
+    text-decoration: none;
 }
 
 body {
@@ -22,9 +29,30 @@ body {
     width: var(--maxWidth);
     margin: 0 auto;
 }
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
 .wrapper {
     margin: 0 auto;
     padding: 0px 10px;
+}
+.container {
+    max-width: 1176px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 .btn {
     display: flex;
@@ -60,18 +88,76 @@ body {
     line-height: 130%;
     font-weight: 700;
 }
+/* header */
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    transition: all 0.8s ease;
+}
+.header__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.header__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 0 15px;
+}
+.header__column {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__logo {
+    display: inline-block;
+    width: 200px;
+    font-size: 0;
+}
+.header__delivery {
+    margin-left: 60px;
+    max-width: 180px;
+}
+.header__delivery p {
+    font-size: calc(9px + 10 * (100vw / 1176));
+    line-height: 120%;
+}
+.header__delivery_mobile {
+    display: none;
+}
+.header__info {
+    display: flex;
+    align-items: center;
+}
+.info-header__item {
+    padding: 10px 15px;
+}
+.info-header__link {
+    display: flex;
+    align-items: center;
+}
+.info-header__link img {
+    width: 24px;
+}
+.info-header__link span {
+    font-size: calc(8px + 8 * (100vw / 1176));
+    line-height: 130%;
+    white-space: nowrap;
+}
 
 /* navbar */
 .navbar {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
     height: 60px;
     width: 100%;
     display: flex;
     align-items: center;
     z-index: 1;
-    background-color: rgba(110, 131, 17, 0.4);
+    background-color: transparent;
 }
 .navbar-center {
     width: 100%;
@@ -193,7 +279,7 @@ body {
     justify-content: space-between;
     margin-bottom: 8px;
     min-height: 36px;
-    max-height: 80px;
+    max-height: 100px;
     max-width: 210px;
     overflow: hidden;
 }
