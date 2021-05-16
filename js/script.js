@@ -48,13 +48,12 @@ class UI {
             <article class="product">
                 <div class="img-container">
                     <img src=${el.img} alt="" class="product-img" />
-                    <button class="bag-btn" data-id=${el.id}>
-                        <i class="fas fa-shopping-cart"></i>
-                        add to trolley
-                    </button>
                 </div>
                 <h3>${el.title}</h3>
                 <h4>$${el.current}</h4>
+                <button class="bag-btn" data-id=${el.id}>
+                    add to trolley
+                </button>
             </article>
             `;
         });
@@ -191,7 +190,7 @@ class UI {
         Storage.saveTrolley(trolley);
         let btn = this.getSingleButton(id);
         btn.disabled = false;
-        btn.innerHTML = `<i class="fas fa-shopping-cart"></i>add to trolley`;
+        btn.innerHTML = `add to trolley`;
     }
 
     getSingleButton(id) {
