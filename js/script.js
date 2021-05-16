@@ -214,9 +214,9 @@ class Storage {
     }
 
     static getTrolley() {
-        return localStorage.getItem('my-trolley')
-            ? JSON.parse(localStorage.getItem('my-trolley'))
-            : [];
+        const parseLocal = JSON.parse(localStorage.getItem('my-trolley'));
+        const emptyArr = [];
+        return localStorage.getItem('my-trolley') ? parseLocal : emptyArr;
     }
 }
 
