@@ -29,6 +29,7 @@ body {
 /* navbar */
 .navbar {
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
     height: 60px;
     width: 100%;
@@ -118,7 +119,8 @@ body {
     margin: 0 auto;
     max-width: 1400px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    display: -ms-grid;
+    -ms-grid-columns: repeat(auto-fit, minmax(260px, 1fr));
     grid-column-gap: 1.5rem;
     grid-row-gap: 2rem;
 }
@@ -224,8 +226,9 @@ body {
 /* trolley-item */
 .trolley-item {
     display: grid;
+    display: -ms-grid;
     align-items: center;
-    grid-template-columns: auto 1fr auto;
+    -ms-grid-columns: auto 1fr auto;
     grid-column-gap: 1.5rem;
     margin: 1.5rem 0;
 }
