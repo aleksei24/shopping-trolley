@@ -7,6 +7,7 @@
     --mainGray: #ececec;
     --mainTransition: all 0.3s ease;
     --maxWidth: 1400px;
+    --btnBg: #fecb24;
 }
 
 * {
@@ -24,6 +25,40 @@ body {
 .wrapper {
     margin: 0 auto;
     padding: 0px 10px;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    color: #1a1a1a;
+    background-color: var(--btnBg);
+}
+.rub::after {
+    content: '₽';
+    display: inline-block;
+    padding-left: 2px;
+}
+.price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.price__column {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+.price_old {
+    color: #a3a3a3;
+    font-size: calc(7px + 3 * (100vw / 1176));
+    line-height: 130%;
+}
+.price_current {
+    color: #1a1a1a;
+    font-size: calc(12px + 12 * (100vw / 1176));
+    line-height: 130%;
+    font-weight: 700;
 }
 
 /* navbar */
@@ -137,20 +172,53 @@ body {
     height: 100%;
     position: relative;
 }
-.img-container {
-    overflow: hidden;
+.product__img {
+    height: auto;
+    margin: 0 auto;
+    padding: 5px 0;
     flex: 1 1 auto;
 }
-.bag-btn {
+.product__img img {
+    max-height: 200px;
+}
+.product__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    padding: 0 10px 20px 10px;
+}
+.product__title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    min-height: 36px;
+    max-height: 80px;
+    max-width: 210px;
+    overflow: hidden;
+}
+.product__title h3 {
+    display: block;
+    font-size: calc(12px + 12 * (100vw / 1176));
+    line-height: 130%;
+}
+.product__text {
+    flex: 1 1 auto;
+    color: #a3a3a3;
+    font-size: calc(9px + 7 * (100vw / 1176));
+    line-height: 130%;
+}
+.product__price {
+    margin-top: 15px;
+}
+.btn_buy {
     position: absolute;
-    bottom: 10%;
+    bottom: 6%;
     right: 0;
-    background-color: var(--primaryColour);
-    color: white;
     border: none;
-    text-transform: uppercase;
-    padding: 0.5rem 0.75rem;
-    font-weight: bold;
+    border-radius: 7px;
+    text-transform: capitalize;
+    padding: 5px 10px;
     transition: var(--mainTransition);
     transform: translateX(0%);
     cursor: pointer;
@@ -164,20 +232,8 @@ body {
 .img-container:hover .bag-btn {
     transform: translateX(0);
 }
-.product-img {
-    display: block;
-    width: 100%;
-    min-height: 12rem;
-    transition: var(--mainTransition);
-}
 .img-container:hover .product-img {
     opacity: 0.5;
-}
-.product h3 {
-    text-transform: capitalize;
-    font-size: 1.1rem;
-    margin-top: 1rem;
-    text-align: center;
 }
 .product h4 {
     margin-top: 0.7rem;

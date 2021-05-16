@@ -47,14 +47,26 @@ class UI {
             result += `
             <div class="products-center__item">
                 <article class="product">
-                    <div class="img-container">
+                    <a href="#!" class="product__img">
                         <img src=${el.img} alt="" class="product-img" />
+                    </a>
+                    <div class="product__content">
+                        <div class="product__title">
+                            <h3>${el.title}</h3>
+                        </div>
+                        <div class="product__text">
+                            <p>${el.text}</p>
+                        </div>
+                        <div class="product__price price">
+                            <div class="price__column">
+                                <span class="price_old rub">${el.old}</span>
+                                <span class="price_current rub">${el.current}</span>
+                            </div>
+                        </div>
+                        <button class="btn btn_buy" data-id=${el.id}>
+                            add to trolley
+                        </button>
                     </div>
-                    <h3>${el.title}</h3>
-                    <h4>$${el.current}</h4>
-                    <button class="bag-btn" data-id=${el.id}>
-                        add to trolley
-                    </button>
                 </article>
             </div>
             `;
@@ -62,7 +74,7 @@ class UI {
         productsDOM.innerHTML = result;
     }
     getBagButtons() {
-        const buttons = [...document.querySelectorAll('.bag-btn')];
+        const buttons = [...document.querySelectorAll('.btn_buy')];
         buttonsDOM = buttons;
         buttons.forEach((btn) => {
             let id = btn.dataset.id;
@@ -104,7 +116,7 @@ class UI {
             <img src=${item.img} alt="" />
             <div>
                 <h4>${item.title}</h4>
-                <h5>$${item.current}</h5>
+                <h5 class="rub">${item.current}</h5>
                 <span class="remove-item" data-id=${item.id}>remove</span>
             </div>
             <div>
