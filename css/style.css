@@ -115,7 +115,6 @@ body {
     text-transform: capitalize;
 }
 .products-center {
-    width: 90vw;
     margin: 0 auto;
     max-width: 1400px;
     display: grid;
@@ -125,10 +124,17 @@ body {
     grid-column-gap: 1.5rem;
     grid-row-gap: 2rem;
 }
+.products-center__item {
+    display: flex;
+    flex: 0 1 25%;
+    padding: 0 22px;
+    border: 1px solid gray;
+    border-radius: 7px;
+}
 .product {
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
+    height: 100%;
     position: relative;
 }
 .img-container {

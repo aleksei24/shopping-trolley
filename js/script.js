@@ -45,16 +45,18 @@ class UI {
         let result = '';
         products.forEach((el) => {
             result += `
-            <article class="product">
-                <div class="img-container">
-                    <img src=${el.img} alt="" class="product-img" />
-                </div>
-                <h3>${el.title}</h3>
-                <h4>$${el.current}</h4>
-                <button class="bag-btn" data-id=${el.id}>
-                    add to trolley
-                </button>
-            </article>
+            <div class="products-center__item">
+                <article class="product">
+                    <div class="img-container">
+                        <img src=${el.img} alt="" class="product-img" />
+                    </div>
+                    <h3>${el.title}</h3>
+                    <h4>$${el.current}</h4>
+                    <button class="bag-btn" data-id=${el.id}>
+                        add to trolley
+                    </button>
+                </article>
+            </div>
             `;
         });
         productsDOM.innerHTML = result;
