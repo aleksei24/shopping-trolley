@@ -1,3 +1,34 @@
+// header
+const header = document.querySelector('.header');
+
+if (header) {
+    window.addEventListener('scroll', () => fixedHeader());
+}
+
+function fixedHeader() {
+    if (window.pageYOffset >= 50) {
+        header.classList.add('header_fixed');
+    } else {
+        header.classList.remove('header_fixed');
+    }
+}
+
+// burger
+const burger = document.querySelector('.burger');
+if (burger) {
+    burger.addEventListener('click', toggleMenu);
+}
+
+function toggleMenu() {
+    const icon = document.querySelector('.icon-burger');
+    const menu = document.querySelector('.menu-burger__list');
+    const bodyLock = document.querySelector('body');
+    icon.classList.toggle('active');
+    menu.classList.toggle('active');
+    bodyLock.classList.toggle('locked');
+}
+
+// shopping functionality
 // variables
 const trolleyBtn = document.querySelector('.trolley-btn');
 const closeTrolleyBtn = document.querySelector('.close-trolley');
