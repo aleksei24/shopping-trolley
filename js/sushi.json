@@ -48,7 +48,7 @@
         {
             "sys": { "id": "6" },
             "fields": {
-            "title": "Токанава",
+            "title": "Самурай",
             "text": "Сыр творожный, креветка в кляре, огурец, тобико",
             "price": {"old": 150, "current": 110},
             "image": { "fields": { "file": { "url": "./img/sushi/06.jpg" } } }

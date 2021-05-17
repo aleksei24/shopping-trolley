@@ -5,6 +5,12 @@ if (header) {
     window.addEventListener('scroll', () => fixedHeader());
 }
 
+if (header.classList.contains('header__top')) {
+    header.style.top = -40;
+} else {
+    header.style.top = 0;
+}
+
 function fixedHeader() {
     if (window.pageYOffset >= 50) {
         header.classList.add('header_fixed');
@@ -27,6 +33,31 @@ function toggleMenu() {
     menu.classList.toggle('active');
     bodyLock.classList.toggle('locked');
 }
+
+// slider
+const indexSwiper = new Swiper('.index-swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    speed: 1500,
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+
+    // autoplay
+    autoplay: {
+        delay: 5000,
+    },
+
+    // pagination
+    /*pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+    },*/
+});
 
 // shopping functionality
 // variables
