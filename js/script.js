@@ -126,7 +126,7 @@ class UI {
                             </div>
                         </div>
                         <button class="btn btn_buy" data-id=${el.id}>
-                            add to trolley
+                            Беру!
                         </button>
                     </div>
                 </article>
@@ -142,11 +142,11 @@ class UI {
             let id = btn.dataset.id;
             let inTrolley = trolley.find((item) => item.id === id);
             if (inTrolley) {
-                btn.innerText = 'In Trolley';
+                btn.innerText = 'В корзине';
                 btn.disabled = true;
             }
             btn.addEventListener('click', (e) => {
-                e.target.innerText = 'In Trolley';
+                e.target.innerText = 'В корзине';
                 e.target.disabled = true;
 
                 let trolleyItem = { ...Storage.getProduct(id), amount: 1 };
@@ -266,7 +266,7 @@ class UI {
         Storage.saveTrolley(trolley);
         let btn = this.getSingleButton(id);
         btn.disabled = false;
-        btn.innerHTML = `add to trolley`;
+        btn.innerHTML = `Беру!`;
     }
 
     getSingleButton(id) {
