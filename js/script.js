@@ -179,7 +179,7 @@ class UI {
             <div>
                 <h4>${item.title}</h4>
                 <h5 class="rub">${item.current}</h5>
-                <span class="remove-item" data-id=${item.id}>remove</span>
+                <span class="remove-item" data-id=${item.id}>удалить</span>
             </div>
             <div>
                 <i class="fas fa-chevron-up" data-id=${item.id}></i>
