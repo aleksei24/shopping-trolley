@@ -1043,10 +1043,10 @@ button.swiper-pagination-bullet {
 .products-center {
     margin: 0 auto;
     max-width: 1400px;
-    display: grid;
     display: -ms-grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    display: grid;
     -ms-grid-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     grid-column-gap: 1.5rem;
     grid-row-gap: 2rem;
 }
@@ -1481,11 +1481,11 @@ button.swiper-pagination-bullet {
 }
 /* trolley-item */
 .trolley-item {
-    display: grid;
     display: -ms-grid;
+    display: grid;
     align-items: center;
-    grid-template-columns: auto 1fr auto;
     -ms-grid-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr auto;
     grid-column-gap: 1.5rem;
     margin: 1.5rem 0;
 }
