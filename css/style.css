@@ -20,7 +20,7 @@
     margin: 0;
     list-style-type: none;
     text-decoration: none;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 
 body {
@@ -64,7 +64,7 @@ a {
     padding: 0 15px;
 }
 @media (max-width: 768px) {
-    .container {
+    .products__container {
         max-width: 100%;
     }
 }
@@ -107,6 +107,22 @@ a {
     font-size: 21px;
     line-height: 130%;
     font-weight: 700;
+}
+.label {
+    margin: 0 4px;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 7px;
+}
+.label_new {
+    color: white;
+    background-color: #5f25e0;
+}
+.label_hit {
+    color: white;
+    background-color: #ff5e00;
 }
 /* header */
 .header {
@@ -1014,11 +1030,19 @@ button.swiper-pagination-bullet {
         margin: 0 auto;
     }
 }
+.product__labels {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    display: flex;
+}
 .product__img {
     height: auto;
     margin: 0 auto;
     padding: 5px 0;
     flex: 1 1 auto;
+    font-size: 0;
 }
 .product__img img {
     max-height: 200px;
@@ -1141,6 +1165,63 @@ button.swiper-pagination-bullet {
     color: var(--primaryColour);
     text-align: center;
 }
+
+/* firm */
+.firm {
+    margin: 100px 0;
+}
+@media (max-width: 992px) {
+    .firm {
+        margin: 50px 0;
+    }
+}
+@media (max-width: 850px) {
+    .firm {
+        display: none;
+    }
+}
+.firm__container {
+    padding: 5px;
+}
+.firm__headline {
+    line-height: 132.8125%;
+    font-weight: 700;
+    margin-bottom: 48px;
+}
+@media (max-width: 992px) {
+    .firm__headline {
+        margin-bottom: 30px;
+    }
+}
+@media (min-width: 768px) {
+    .firm__headline {
+        font-size: calc(14px + 50 * (100vw / 1176));
+    }
+}
+.firm__cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -22px;
+}
+@media (max-width: 992px) {
+    .firm__cards {
+        margin: 0 -15px;
+    }
+}
+.cards-firm__item {
+    display: flex;
+    justify-content: center;
+    flex: 0 1 25%;
+    padding: 0 22px;
+    box-shadow: 0 4px 24px rgb(0 0 0 / 8%);
+    margin-bottom: 20px;
+}
+@media (max-width: 992px) {
+    .cards-firm__item {
+        padding: 0 15px;
+    }
+}
+
 /* trolley */
 .trolley-overlay {
     position: fixed;
