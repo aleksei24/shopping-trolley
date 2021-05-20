@@ -1,8 +1,8 @@
 const client = contentful.createClient({
     // This is the space ID. A space is like a project folder in Contentful terms
-    space: '0im7ih6gsp87',
+    space: 'zzz',
     // This is the access token for this space. Normally you get both ID and the token in the Contentful web app
-    accessToken: 'QcjPpITwdiDAjVXdKSR543T5XYUu66lbiM4BBKFbsxE',
+    accessToken: 'xxx',
 });
 
 // variables
@@ -153,9 +153,7 @@ class UI {
             if (e.target.classList.contains('remove-item')) {
                 let removeItem = e.target;
                 let id = removeItem.dataset.id;
-                trolleyContent.removeChild(
-                    removeItem.parentElement.parentElement
-                );
+                trolleyContent.removeChild(removeItem.parentElement.parentElement);
                 this.removeItem(id);
             } else if (e.target.classList.contains('fa-chevron-up')) {
                 let addAmount = e.target;
@@ -174,12 +172,9 @@ class UI {
                 if (tempItem.amount > 0) {
                     Storage.saveTrolley(trolley);
                     this.setTrolleyValues(trolley);
-                    subtractAmount.previousElementSibling.innerText =
-                        tempItem.amount;
+                    subtractAmount.previousElementSibling.innerText = tempItem.amount;
                 } else {
-                    trolleyContent.removeChild(
-                        subtractAmount.parentElement.parentElement
-                    );
+                    trolleyContent.removeChild(subtractAmount.parentElement.parentElement);
                     this.removeItem(id);
                 }
             }
@@ -219,9 +214,7 @@ class Storage {
         localStorage.setItem('trolley', JSON.stringify(trolley));
     }
     static getTrolley() {
-        return localStorage.getItem('trolley')
-            ? JSON.parse(localStorage.getItem('trolley'))
-            : [];
+        return localStorage.getItem('trolley') ? JSON.parse(localStorage.getItem('trolley')) : [];
     }
 }
 
